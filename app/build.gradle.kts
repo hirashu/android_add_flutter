@@ -22,6 +22,9 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+        create("profile") {
+            initWith(getByName("debug"))
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -37,6 +40,9 @@ android {
 
 dependencies {
 
+    debugImplementation("iwatake.core_module.flutter_core_module:flutter_debug:1.0")
+    releaseImplementation("iwatake.core_module.flutter_core_module:flutter_release:1.0")
+    add("profileImplementation", "iwatake.core_module.flutter_core_module:flutter_profile:1.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

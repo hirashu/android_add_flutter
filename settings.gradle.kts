@@ -21,4 +21,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyAddFlutterApp"
 include(":app")
- 
+
+dependencyResolutionManagement {
+    repositories {
+        maven(url = "https://storage.googleapis.com/download.flutter.io")
+        maven(url = "/Users/iwatake/StudioProjects/flutter_core_module/build/host/outputs/repo")
+    }
+}
